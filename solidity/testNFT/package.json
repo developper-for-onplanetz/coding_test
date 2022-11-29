@@ -1,0 +1,22 @@
+{
+  "name": "edv_token_staking",
+  "version": "1.0.0",
+  "repository": "git@github.com:developper-for-onplanetz/edv_token_staking.git",
+  "license": "MIT",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.7.3",
+    "dayjs": "^1.11.6",
+    "hardhat": "^2.12.2",
+    "keccak256": "^1.0.6",
+    "merkletreejs": "^0.3.7",
+    "truffle-flatten": "^1.0.8",
+    "web3": "^1.8.1"
+  },
+  "devDependencies": {
+    "@truffle/hdwallet-provider": "^2.1.0",
+    "chai": "^4.3.7",
+    "dotenv": "^16.0.3",
+    "fs": "^0.0.1-security",
+    "mocha": "^10.1.0"
+  }
+}
