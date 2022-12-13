@@ -1,13 +1,14 @@
-## Solidityエンジニア向け　コーディングテスト
+### Solidityエンジニア向け　コーディングテスト
 
 ### 概要
-- 今回のテストでは、以下仕様に沿ったコントラクトコードの実装及び、goerliテストネットへのデプロイを行う。
+- 今回のテストでは、以下仕様に沿ったコントラクトコードの実装及び、goerliテストネットへのデプロイを行っていただきます。
   - ERC721規格
   - buy機能（NFTのmintと支払い通貨のtransferを実行）あり
   - buy機能内に購入制限（１アドレスあたりの発行上限及び購入時間の制限）機能あり
 
-- 問題1に記載されているコントラクトコード、問題2に記載されているmigration用コードを実装し、truffle(or hardhat)パッケージを使って、デプロイせよ。
-- デプロイにあたり、必要なパッケージはtestNFTディレクトリ内のpackage.jsonに記載されているので、適宜インストールを行うこと。
+- 問題1に記載されているコントラクトコード、問題2に記載されているmigration用コードを実装し、truffle(or hardhat)パッケージを使って、デプロイをお願いします。
+- デプロイにあたり、必要なパッケージはtestNFTディレクトリ内のpackage.jsonに記載されているので、適宜インストールをお願いします。
+- テストが終わったら、問題1で作成したsolファイル、問題2で作成したデプロイ用コードの提出をお願いします。
 
 #### 問題1
 - 以下のsolidityファイルの中身を設問(1)~(5)に沿って実装せよ。
@@ -33,13 +34,16 @@ contract testNFT is ERC721URIStorage,Ownable,ReentrancyGuard
 
 
   //設問(2)
-  //variableとして以下定数を設定せよ。
+  //variable(状態変数)として以下変数を設定せよ。
   // 1. 発行済みトークンのindex
   // 2. mint可能時刻
   // 3. 支払い通貨のinterface(IERC20)
   // 4. 発行対象のtokenid(uint)のリスト
   // 5. 発行対象のtokenmeta情報(string)のリスト
   // 6. 支払い通貨の受け取りアドレス
+
+  uint256 public index_;
+
 
 
   //設問(3)
@@ -110,8 +114,3 @@ var ipfs = new Array();
 
 #### 問題3
 - 問題1で作成したsolファイル、問題2で作成したmigration用jsファイルをtruffle(or hardhat) を用いて、compileした後、goerliテストネットにdeployせよ。
-- デプロイにあたってはalchemyの以下URLで指定されたproviderを参照すること。
-```
-NETWORK_HOST=https://eth-goerli.g.alchemy.com/v2/
-ALCHEMY_API_KEY=eyQARjeSSJjQ9FSJS1Ki4xJiStgctw4B
-```
